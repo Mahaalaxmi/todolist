@@ -1,10 +1,12 @@
 //create express
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 //create an instance of express
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 //let todos = [];
 
@@ -90,7 +92,7 @@ app.delete("/todos/:id", async (req, res) => {
   }
 });
 
-const port = 3000;
+const port = 8000;
 app.listen(port, () => {
   console.log("Server is listening to port " + port);
 });
